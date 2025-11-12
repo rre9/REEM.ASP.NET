@@ -1,0 +1,19 @@
+@model List<ClinicApp.Models.Doctor>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Doctors";
+}
+
+<h1>Doctors</h1>
+
+<ol>
+@foreach (var doctor in Model)
+{
+    <li>
+        <a href="@Url.Action("Details", "Doctor", new { id = doctor.Id })">
+            @doctor.FullName
+        </a>
+    </li>
+}
+</ol>
+
